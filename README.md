@@ -67,7 +67,7 @@ npm start
 ## Available Tools
 
 - `get_tasks` - Get all tasks or tasks from a specific project (with enhanced display)
-- `get_overdue_tasks` - Get overdue tasks with timezone compensation (configurable offset, defaults to UTC+8)
+- `get_overdue_tasks` - Get overdue tasks with timezone compensation (configurable offset, defaults to UTC+8 - adjust for your timezone)
 - `get_todays_tasks` - Get tasks due today with D+1 timezone adjustment
 - `get_projects` - Get all projects from TickTick
 - `create_task` - Create a new task with priority, tags, due dates
@@ -81,9 +81,17 @@ npm start
 This server includes **manual timezone workarounds** to handle TickTick's timezone inconsistencies:
 
 - **D+1 Adjustment**: Due dates are automatically adjusted by adding 1 day to compensate for timezone differences
-- **Configurable Offset**: `get_overdue_tasks` accepts a `timezoneOffsetHours` parameter (defaults to 8 for UTC+8)
+- **Configurable Offset**: `get_overdue_tasks` accepts a `timezoneOffsetHours` parameter 
+  - **Default**: 8 (UTC+8) - **Change this for your timezone!**
+  - **Examples**: 
+    - `timezoneOffsetHours: -5` for EST (UTC-5)
+    - `timezoneOffsetHours: 0` for UTC
+    - `timezoneOffsetHours: 9` for JST (UTC+9)
+    - `timezoneOffsetHours: 1` for CET (UTC+1)
 - **All-day vs Timed Tasks**: Different handling for all-day tasks vs specific time tasks
 - **Enhanced Display**: Tasks include human-readable priority text (`None`, `Low`, `Medium`, `High`)
+
+**Important**: The default timezone offset is set to UTC+8. Make sure to specify your correct timezone offset when calling `get_overdue_tasks` to get accurate results for your location.
 
 ## MCP Integration
 
