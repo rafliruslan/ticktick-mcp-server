@@ -8,7 +8,7 @@ A Model Context Protocol (MCP) server that provides integration with TickTick ta
 - Create, update, and delete tasks
 - Mark tasks as completed
 - Get specific task details
-- **Smart timezone handling** with manual D+1 adjustment for accurate due date calculations
+- Timezone handling with manual D+1 adjustment for accurate due date calculations
 - Get overdue tasks with configurable timezone offset
 - Get today's tasks with proper timezone compensation
 - OAuth and username/password authentication support
