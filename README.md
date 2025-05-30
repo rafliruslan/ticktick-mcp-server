@@ -1,5 +1,7 @@
 # TickTick MCP Server
 
+[![smithery badge](https://smithery.ai/badge/@rafliruslan/ticktick-mcp-server)](https://smithery.ai/server/@rafliruslan/ticktick-mcp-server)
+
 A Model Context Protocol (MCP) server that provides integration with TickTick task management service.
 
 ## Features
@@ -15,6 +17,14 @@ A Model Context Protocol (MCP) server that provides integration with TickTick ta
 - Full TypeScript support with proper error handling
 
 ## Setup
+
+### Installing via Smithery
+
+To install TickTick Task Management Server for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@rafliruslan/ticktick-mcp-server):
+
+```bash
+npx -y @smithery/cli install @rafliruslan/ticktick-mcp-server --client claude
+```
 
 1. Install dependencies:
 ```bash
