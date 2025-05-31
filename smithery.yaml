@@ -1,0 +1,43 @@
+# Smithery configuration file: https://smithery.ai/docs/build/project-config
+
+startCommand:
+  type: stdio
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({ command: 'node', args: ['dist/index.js'], env: { TICKTICK_ACCESS_TOKEN: config.ticktickAccessToken, TICKTICK_REFRESH_TOKEN: config.ticktickRefreshToken, TICKTICK_CLIENT_ID: config.ticktickClientId, TICKTICK_CLIENT_SECRET: config.ticktickClientSecret, TICKTICK_USERNAME: config.ticktickUsername, TICKTICK_PASSWORD: config.ticktickPassword } })
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    properties:
+      ticktickAccessToken:
+        type: string
+        default: ""
+        description: OAuth access token for TickTick
+      ticktickRefreshToken:
+        type: string
+        default: ""
+        description: OAuth refresh token for TickTick
+      ticktickClientId:
+        type: string
+        default: ""
+        description: OAuth client ID for TickTick
+      ticktickClientSecret:
+        type: string
+        default: ""
+        description: OAuth client secret for TickTick
+      ticktickUsername:
+        type: string
+        default: ""
+        description: Username for TickTick (if not using OAuth)
+      ticktickPassword:
+        type: string
+        default: ""
+        description: Password for TickTick (if not using OAuth)
+  exampleConfig:
+    ticktickAccessToken: your_access_token
+    ticktickRefreshToken: your_refresh_token
+    ticktickClientId: your_client_id
+    ticktickClientSecret: your_client_secret
+    ticktickUsername: ""
+    ticktickPassword: ""
